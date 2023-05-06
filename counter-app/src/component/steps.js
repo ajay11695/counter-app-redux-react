@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { changeStep } from "../store/action"
 
 function Steps(props) {
     return (
@@ -6,7 +7,7 @@ function Steps(props) {
             <p className="textalign">Steps</p>
             <div className="flex">
                 {[5, 10, 15].map((step) =>
-                <button key={step} onClick={() => props.dispatch({type:'changeStep',payload:step})} className={props.step === step ? 'active' : ''}>
+                <button key={step} onClick={() => props.dispatch(changeStep(step))} className={props.step === step ? 'active' : ''}>
                     {step}</button>
             )}
             </div>

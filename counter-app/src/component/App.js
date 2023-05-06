@@ -2,6 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import Steps from "./steps"
 import MaxValue from "./MaxValue"
+import { increment,decrement,reset } from "../store/action"
 
 function App(props) {
     return (
@@ -14,9 +15,9 @@ function App(props) {
                    <MaxValue/>
                 </div>
                 <div className="flex">
-                    <button className="btn" onClick={()=>props.dispatch({type:'increment'})}>Increment</button>
-                    <button className="btn" onClick={()=>props.dispatch({type:'decrement'})}>Decrement</button>
-                    <button className="btn" onClick={()=>props.dispatch({type:'reset'})}>Reset</button>
+                    <button className="btn" onClick={()=>props.dispatch(increment())}>Increment</button>
+                    <button className="btn" onClick={()=>props.dispatch(decrement())}>Decrement</button>
+                    <button className="btn" onClick={()=>props.dispatch(reset())}>Reset</button>
                 </div>
             </div>
         </>
